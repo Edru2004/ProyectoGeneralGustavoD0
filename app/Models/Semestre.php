@@ -9,7 +9,7 @@ class Semestre extends Model
 {
     use HasFactory;
 
-    protected $table = 'Semestre';
+    protected $table = 'semestre';
     protected $primaryKey = 'id_semestre';
     public $timestamps = false; // Como es una tabla de catálogo simple, no solemos usar timestamps
 
