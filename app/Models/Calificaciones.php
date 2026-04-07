@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Calificaciones extends Model {
     use HasFactory;
-    protected $table = 'Calificaciones';
+    protected $table = 'calificaciones';
     protected $primaryKey = 'id_calificacion';
     public $timestamps = false;
     protected $fillable = ['id_estudiante', 'id_materia', 'parcial1', 'parcial2', 'parcial3'];

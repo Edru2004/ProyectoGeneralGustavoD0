@@ -9,7 +9,7 @@ class Materia extends Model
 {
     use HasFactory;
 
-    protected $table = 'Materia'; // Mayúscula
+    protected $table = 'materia'; // Mayúscula
     protected $primaryKey = 'id_materia';
     public $timestamps = false;
 
