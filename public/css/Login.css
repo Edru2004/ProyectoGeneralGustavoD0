@@ -1,0 +1,237 @@
+/* Login.css - Versión Corregida */
+
+:root {
+    --primary: #5b9036;
+    --primary-dark: #4a752c;
+    --dark: #2c2c2c;
+    --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Carrusel y Fondo */
+.carousel-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.carousel-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-background img.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* --- CONTENEDOR PRINCIPAL CORREGIDO --- */
+.main-box {
+    background: white;
+    width: 850px;
+    /* Cambiamos height fija por min-height para evitar el recorte */
+    min-height: 580px; 
+    height: auto; 
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: stretch; /* Asegura que ambos paneles midan lo mismo */
+}
+
+.panel-wrapper {
+    width: 200%;
+    display: flex;
+    transition: var(--transition);
+}
+
+/* Control de deslizamiento */
+.main-box.active .panel-wrapper {
+    transform: translateX(-50%);
+}
+
+.panel {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center;
+}
+
+/* --- PANEL DE LOGIN --- */
+.login-content {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el logo y los textos */
+}
+
+.logo-school {
+    width: 100px; /* Tamaño ajustado para que no robe tanto espacio */
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.login-panel h2 {
+    font-size: 1.6rem;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Mensajes de Error de Laravel */
+.error-banner {
+    width: 100%;
+    background: #fff1f0;
+    color: #f5222d;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    border: 1px solid #ffa39e;
+}
+
+/* Inputs Modernos */
+.login-form {
+    width: 100%;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #aaa;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(91, 144, 54, 0.1);
+}
+
+/* Botones */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    color: #888;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* --- PANEL DE BIENVENIDA --- */
+.welcome-panel {
+    background: linear-gradient(135deg, #3b3b3b 0%, var(--primary) 100%);
+    color: white;
+}
+
+.icon-box {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.welcome-panel h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.welcome-panel p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.btn-slide {
+    padding: 10px 35px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-slide:hover {
+    background: white;
+    color: var(--primary);
+}

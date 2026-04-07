@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #38a169;
+    --secondary-color: #4a5568;
+    --light-bg: #f7f9fc;
+}
+
+body {
+    background: var(--light-bg);
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: var(--secondary-color);
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+    transition: 0.3s;
+}
+
+.sidebar.closed {
+    width: 70px;
+}
+
+.sidebar a {
+    display: flex;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #ffffff22;
+}
+
+/* PERFIL */
+.profile-section {
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+/* CONTENIDO */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+}
+
+.sidebar.closed + .content {
+    margin-left: 70px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--primary-color);
+}
+
+/* TARJETAS */
+.kpi-card-dashboard {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
