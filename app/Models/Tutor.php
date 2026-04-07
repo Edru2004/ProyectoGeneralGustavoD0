@@ -10,7 +10,7 @@ class Tutor extends Model
     use HasFactory;
 
     // Nombre de la tabla en MySQL
-    protected $table = 'Tutor';
+    protected $table = 'tutor';
 
     // Llave primaria
     protected $primaryKey = 'id_tutor';
