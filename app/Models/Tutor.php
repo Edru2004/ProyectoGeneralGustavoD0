@@ -9,33 +9,25 @@ class Tutor extends Model
 {
     use HasFactory;
 
-    // DETALLE CLAVE 1: Cambiamos 'tutor' por 'Tutor' (con T mayúscula)
-    // para que coincida exactamente con la base de datos de Railway.
-    protected $table = 'Tutor';
+    // Nombre de la tabla en MySQL
+    protected $table = 'tutor';
 
+    // Llave primaria
     protected $primaryKey = 'id_tutor';
-    public $timestamps = false;
 
-    // DETALLE CLAVE 2: Actualizamos el fillable con los nuevos campos del Web
-    // Agregamos 'curp' y 'municipio' para que la API permita registrarlos o editarlos.
+    // Campos que se pueden llenar
     protected $fillable = [
         'nombre',
         'apellido_p',
         'apellido_m',
-        'curp', 
         'parentesco',
         'no_telefono',
-        'municipio',
         'ciudad',
         'calle',
         'numero'
     ];
 
-    // --- RELACIONES ---
-    
-    /**
-     * Relación con Estudiantes (Un tutor puede tener muchos estudiantes)
-     */
+    // Relación con Estudiantes (Un tutor puede tener muchos estudiantes)
     public function estudiantes()
     {
         return $this->hasMany(Estudiante::class, 'id_tutor', 'id_tutor');

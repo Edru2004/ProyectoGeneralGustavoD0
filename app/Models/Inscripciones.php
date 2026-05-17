@@ -6,24 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inscripciones extends Model
 {
-    // DETALLE CLAVE 1: Cambiamos 'inscripciones' por 'Inscripciones' (con I mayúscula)
-    // para que coincida exactamente con tu base de datos actualizada en Railway.
-    protected $table = 'Inscripciones';
+    protected $table = 'inscripciones';
     protected $primaryKey = 'id_inscripcion';
     public $timestamps = false;
 
     protected $fillable = [
-        'id_estudiante', 
-        'id_semestre', 
-        'id_grupo', 
-        'ciclo_escolar', 
-        'estado_inscripcion'
+        'id_estudiante', 'id_semestre', 'id_grupo', 'ciclo_escolar', 'estado_inscripcion'
     ];
 
-    // --- RELACIONES ---
-
-    // DETALLE CLAVE 2: Conservamos esta relación. Es fundamental para que la API
-    // pueda saber a qué alumno le pertenece un registro de inscripción.
+    // --- AGREGA ESTA FUNCIÓN ---
     public function estudiante()
     {
         return $this->belongsTo(Estudiante::class, 'id_estudiante', 'id_estudiante');
